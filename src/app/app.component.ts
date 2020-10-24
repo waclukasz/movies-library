@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SearchMovieApi } from 'src/models';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'movies-library';
+  public searchedMovie: SearchMovieApi;
+
+  public onMovieEmit(movie: SearchMovieApi): void {
+    this.searchedMovie = movie;
+  }
 }

@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MainNavbarComponent} from "./components/main-navbar/main-navbar.component";
 import {FormsModule} from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+import { MovieComponent } from './components/movie/movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavbarComponent
+    MainNavbarComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

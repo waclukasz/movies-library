@@ -36,3 +36,22 @@
     color: whitesmoke;
   }
 }
+
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  margin-right: 6px;
+}
