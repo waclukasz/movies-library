@@ -7,12 +7,14 @@ import {MainNavbarComponent} from "./components/main-navbar/main-navbar.componen
 import {FormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { MovieComponent } from './components/movie/movie.component';
+import { SingleMovieComponent } from "./components/single-movie/single-movie.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavbarComponent,
-    MovieComponent
+    MovieComponent,
+    SingleMovieComponent
   ],
   imports: [
     BrowserModule,

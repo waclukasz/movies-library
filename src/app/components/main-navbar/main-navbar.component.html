@@ -1,4 +1,28 @@
 <div class="main-navbar">
+  <div class="filter-container">
+    <button
+      class="filter-btn"
+      (click)="toggleFilter()"
+    >
+      <i class="fas fa-filter"></i>
+    </button>
+    <div
+      *ngIf="isFilterOpened"
+      class="filter-box"
+    >
+      <div class="checkbox-container">
+        <div
+          (click)="setUnknownTitle()"
+          class="checkbox">
+          <i
+            *ngIf="isFilteredByUnknownTitle"
+            class="fas fa-check">
+          </i>
+        </div>
+        <p>I don't know the title</p>
+      </div>
+    </div>
+  </div>
  <div class="checkbox-container">
   <div
     (click)="setSearchById()"

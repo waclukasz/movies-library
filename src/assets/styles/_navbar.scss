@@ -55,3 +55,27 @@
   border-radius: 8px;
   margin-right: 6px;
 }
+
+.filter-btn {
+  margin-right: 20px;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.filter-box {
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  transform: translateX(-50%);
+  width: 300px;
+  min-height: 50px;
+  padding: 10px;
+  background-color: #cfcfcf;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}

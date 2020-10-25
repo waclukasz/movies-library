@@ -1,11 +1,17 @@
-<main-navbar
-  (emitMovie)="onMovieEmit($event)"
->
-</main-navbar>
+<main-navbar></main-navbar>
 <div class="main-content">
   <movie-component
     *ngIf="searchedMovie !== undefined"
     [movie]="searchedMovie"
   >
   </movie-component>
+
+  <div *ngIf="searchedMovies">
+    <div *ngFor="let singleMovie of searchedMovies">
+      <single-movie
+        [singleMovie]="singleMovie"
+      >
+      </single-movie>
+    </div>
+  </div>
 </div>

@@ -9,6 +9,8 @@ export class MainNavbarComponent implements OnInit, OnDestroy {
   @Output() public emitMovie = new EventEmitter<SearchMovieApi>();
   public searchQuery: string;
   public isSearchedById: boolean = false;
+  public isFilterOpened: boolean = false;
+  public isFilteredByUnknownTitle: boolean = false
   public movie: SearchMovieApi;
 
   constructor(private searchMovieService: SearchMovieService) {}
@@ -29,20 +31,37 @@ export class MainNavbarComponent implements OnInit, OnDestroy {
     }
   }
 
+  public setUnknownTitle(): void {
+    this.isFilteredByUnknownTitle = !this.isFilteredByUnknownTitle
+  }
+
+  public toggleFilter(): void {
+    this.isFilterOpened = !this.isFilterOpened;
+    console.log(this.isFilterOpened)
+  }
+
   public searchMovie(): void {
     if (this.searchQuery === undefined || this.searchQuery.length === 0) {
       return;
     }
 
     if (this.isSearchedById) {
-      this.searchMovieService.getMovieById(this.searchQuery).subscribe((res: any) => {
-        this.movie = res;
-        this.emitMovie.emit(this.movie);
+      this.searchMovieService.getMovieById(this.searchQuery).subscribe((res: SearchMovieApi) => {
+        // this.movie = res;
+        // this.emitMovie.emit(this.movie);
+        this.searchMovieService.setMovie(res)
       })
     } else {
-      this.searchMovieService.getMovieByTitle(this.searchQuery).subscribe((res: any) => {
-        this.movie = res;
-        this.emitMovie.emit(this.movie);
+      this.searchMovieService.getMovieByTitle(this.searchQuery, this.isFilteredByUnknownTitle).subscribe((res: any) => {
+        // this.movie = res;
+        // this.emitMovie.emit(this.movie);
+        if (this.isFilteredByUnknownTitle) {
+          this.searchMovieService.setMovie(res.Search)
+        } else {
+          this.searchMovieService.setMovie(res)
+        }
+        // this.searchMovieService.setMovie(res)
+
       })
     }
 
