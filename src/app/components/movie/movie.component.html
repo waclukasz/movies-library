@@ -1,0 +1,30 @@
+<div class="movie-container">
+  <div class="movie-header">
+    <h1 class="movie-title">
+      {{ movie.Title }}
+    </h1>
+    <img [src]="movie.Poster" alt="poster" class="movie-img">
+  </div>
+  <div class="movie-content">
+    <div class="movie-content-item">
+      <p>Director:</p>
+      <p>{{ movie.Director }}</p>
+    </div>
+    <div class="movie-content-item">
+      <p>Country:</p>
+      <p>{{ movie.Country }}</p>
+    </div>
+    <div class="movie-content-item">
+      <p>Awards:</p>
+      <p>{{ movie.Awards }}</p>
+    </div>
+    <div class="movie-content-item">
+      <p>Actors:</p>
+      <p>{{ movie.Actors }}</p>
+    </div>
+  </div>
+
+  <div class="movie-content-item">
+    <p class="movie-description">{{ movie.Plot }}</p>
+  </div>
+</div>

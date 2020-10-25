@@ -1,9 +1,9 @@
 <div class="main-navbar">
  <div class="checkbox-container">
-  <div 
+  <div
     (click)="setSearchById()"
     class="checkbox">
-    <i 
+    <i
       *ngIf="isSearchedById"
       class="fas fa-check">
     </i>
@@ -14,6 +14,7 @@
     <input
       type="text"
       class="main-navbar-search-input"
+      (keyup)="searchMovieByKeypress($event)"
       [(ngModel)]="searchQuery"
     >
     <button
